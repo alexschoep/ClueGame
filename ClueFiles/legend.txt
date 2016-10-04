@@ -1,0 +1,11 @@
+A, Armory, Card
+B, Rec Room, Card
+C, Master Chamber, Card
+E, Library, Card
+F, Sunroom, Card
+G, Pool Room, Card
+H, Dining Room, Card
+I, Entrance, Card
+J, Coatroom, Card
+X, Closet, Other
+W, Walkway, Other
