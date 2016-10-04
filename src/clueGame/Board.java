@@ -1,5 +1,7 @@
-import java.util.*;
 package clueGame;
+
+import java.util.*;
+
 
 public class Board {
 	/*
