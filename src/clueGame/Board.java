@@ -10,4 +10,12 @@ public class Board {
 	private BoardCell board[][];
 	private Map rooms;
 	private Map adjMatrix;
+	public static Board getInstance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public void setConfigFiles(String string, String string2) {
+		// TODO Auto-generated method stub
+		
+	}
 }
