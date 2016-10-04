@@ -1,0 +1,9 @@
+For our legend test, we checked the first few, a couple middle two, and the last one. 
+This was done to make sure all should be loaded in. We then check that the number 
+of rows and columns are right. For our door tests, we selected four doors 
+that all opened in different ways. Each door opened down, up, left, or right
+to make sure all of the possible doors functioned correctly. We also tested 
+a walkway cell and a room cell to make sure they were not read in as doors. 
+We made sure there were 13 doors as are in our excel document. Next we tested 
+to make sure the first cells from a few rooms read in correctly, meaning the 
+top-left most cell in a room. Finally we tested some of the last cells from some rooms.
