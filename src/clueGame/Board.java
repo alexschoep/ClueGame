@@ -1,7 +1,7 @@
 package clueGame;
 
 import java.util.*;
-
+import java.io.*;
 
 public class Board {
 	
@@ -31,9 +31,22 @@ public class Board {
 		roomConfigFile = legend;
 		
 	}
+	
+	public void loadRoomConfig() throws FileNotFoundException{
+		FileReader reader = new FileReader(roomConfigFile);
+		Scanner in = new Scanner(reader);
+		while (in.hasNextLine()) {
+			String line = in.nextLine();
+			for (int i = 0; i < line.length() i++) {
+				if (line.charAt(i) != ',')
+					if (line.charAt(i+1) == 'R' || line.charAt(i+1) == 'L' || line.charAt(i+1) == 'U' || line.charAt(i+1) == 'D') {
+						
+					}
+			}
+		}
+	}
 
 	public void initialize() {
-		// TODO Auto-generated method stub
 		
 	}
 

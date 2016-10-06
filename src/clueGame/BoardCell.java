@@ -3,14 +3,24 @@ package clueGame;
 public class BoardCell {
 	private int row;
 	private int column;
+	private DoorDirection doorDirection;
+	private char initial;
 	
 	public BoardCell() {
 		row = 0;
 		column = 0;
 	}
-	public BoardCell(int row, int column) {
+	public BoardCell(int row, int column, char initial) {
 		this.row = row;
 		this.column = column;
+		this.initial = initial;
+	}
+	
+	public BoardCell(int row, int column, char initial, DoorDirection doorDirection) {
+		this.row = row;
+		this.column = column;
+		this.initial = initial;
+		this.doorDirection = doorDirection;
 	}
 	
 	public int getRow() {
