@@ -4,14 +4,16 @@ import java.util.*;
 
 
 public class Board {
-	/*
+	
 	private int numRows;
 	private int numColumns;
 	private static final int MAXBOARDSIZE = 50;
 	private BoardCell board[][];
 	private Map rooms;
 	private Map adjMatrix;
-	*/
+	private Set<BoardCell> targets;
+	private String boardConfigFile;
+	private String roomConfigFile;
 	
 	// variable used for singleton pattern
 	private static Board theInstance = new Board();
@@ -24,8 +26,9 @@ public class Board {
 		return theInstance;
 	}
 
-	public void setConfigFiles(String string, String string2) {
-		// TODO Auto-generated method stub
+	public void setConfigFiles(String layout, String legend) {
+		boardConfigFile = layout;
+		roomConfigFile = legend;
 		
 	}
 
