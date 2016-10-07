@@ -84,8 +84,6 @@ public class Board {
 	public void initialize() {
 		rooms = new HashMap<Character, String>();
 		board = new BoardCell[MAXBOARDSIZE][MAXBOARDSIZE];
-		boardConfigFile = "legend.txt";
-		roomConfigFile = "map.csv";
 	}
 
 	public Map<Character, String> getLegend() {
