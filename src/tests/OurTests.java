@@ -21,7 +21,7 @@ import clueGame.DoorDirection;
 public class OurTests {
 	// Constants that I will use to test whether the file was loaded correctly
 	public static final int LEGEND_SIZE = 11;
-	public static final int NUM_ROWS = 20;
+	public static final int NUM_ROWS = 22;
 	public static final int NUM_COLUMNS = 20;
 
 	// NOTE: I made Board static because I only want to set it up one 
@@ -73,7 +73,7 @@ public class OurTests {
 		room = board.getCellAt(9, 12);
 		assertTrue(room.isDoorway());
 		assertEquals(DoorDirection.UP, room.getDoorDirection());
-		room = board.getCellAt(14, 1);
+		room = board.getCellAt(6, 12);
 		assertTrue(room.isDoorway());
 		assertEquals(DoorDirection.DOWN, room.getDoorDirection());
 		// Test that room pieces that aren't doors know it
