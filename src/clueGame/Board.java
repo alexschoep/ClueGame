@@ -35,19 +35,40 @@ public class Board {
 	public void loadRoomConfig() throws FileNotFoundException{
 		FileReader reader = new FileReader(roomConfigFile);
 		Scanner in = new Scanner(reader);
+		int row = 0;
+		int column = 0;
+		while (in.hasNextLine()) {
+			column = 0;
+			String line = in.nextLine();
+			for (int i = 0; i < line.length(); i++) {
+				if (line.charAt(i) != ',') {
+					if (line.charAt(i+1) == 'R' || line.charAt(i+1) == 'L' || line.charAt(i+1) == 'U' || line.charAt(i+1) == 'D') {
+						board[row][column] = new BoardCell(row, column, line.charAt(i), line.charAt(i+1));
+						column++;
+					}
+					else {
+						board[row][column] = new BoardCell(row, column, line.charAt(i));
+						column++;
+					}
+				}
+			}
+			row++;
+		}
+		numColumns = column;
+		numRows = row;
+	}
+	
+	public void loadBoardConfig() throws FileNotFoundException{
+		FileReader reader = new FileReader(boardConfigFile);
+		Scanner in = new Scanner(reader);
 		while (in.hasNextLine()) {
 			String line = in.nextLine();
-			for (int i = 0; i < line.length() i++) {
-				if (line.charAt(i) != ',')
-					if (line.charAt(i+1) == 'R' || line.charAt(i+1) == 'L' || line.charAt(i+1) == 'U' || line.charAt(i+1) == 'D') {
-						
-					}
-			}
+			
 		}
 	}
 
 	public void initialize() {
-		
+		rooms = new HashMap<Character, String>();
 	}
 
 	public Map<Character, String> getLegend() {
