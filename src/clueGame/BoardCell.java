@@ -14,13 +14,25 @@ public class BoardCell {
 		this.row = row;
 		this.column = column;
 		this.initial = initial;
+		this.doorDirection = DoorDirection.NONE;
 	}
 	
-	public BoardCell(int row, int column, char initial, DoorDirection doorDirection) {
+	public BoardCell(int row, int column, char initial, char doorDirection) {
 		this.row = row;
 		this.column = column;
 		this.initial = initial;
-		this.doorDirection = doorDirection;
+		if (doorDirection == 'R') {
+			this.doorDirection = DoorDirection.RIGHT;
+		}
+		if (doorDirection == 'L') {
+			this.doorDirection = DoorDirection.LEFT;
+		}
+		if (doorDirection == 'U') {
+			this.doorDirection = DoorDirection.UP;
+		}
+		if (doorDirection == 'D') {
+			this.doorDirection = DoorDirection.DOWN;
+		}
 	}
 	
 	public int getRow() {
@@ -37,18 +49,15 @@ public class BoardCell {
 	}
 	
 	public boolean isDoorway() {
-		// TODO Auto-generated method stub
-		return false;
+		return doorDirection != DoorDirection.NONE;
 	}
 	
 	public DoorDirection getDoorDirection() {
-		// TODO Auto-generated method stub
-		return null;
+		return doorDirection;
 	}
 	
 	public char getInitial() {
-		// TODO Auto-generated method stub
-		return 0;
+		return initial;
 	}
 	
 	
