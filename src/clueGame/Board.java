@@ -32,7 +32,7 @@ public class Board {
 		
 	}
 	
-	public void loadRoomConfig() throws FileNotFoundException{
+	public void loadRoomConfig() throws FileNotFoundException, BadConfigFormatException{
 		FileReader reader = new FileReader(roomConfigFile);
 		Scanner in = new Scanner(reader);
 		int row = 0;
@@ -42,13 +42,17 @@ public class Board {
 			String line = in.nextLine();
 			for (int i = 0; i < line.length(); i++) {
 				if (line.charAt(i) != ',') {
-					if (line.charAt(i+1) == 'R' || line.charAt(i+1) == 'L' || line.charAt(i+1) == 'U' || line.charAt(i+1) == 'D') {
+					if ((line.charAt(i+1) == 'R' || line.charAt(i+1) == 'L' || line.charAt(i+1) == 'U' || line.charAt(i+1) == 'D') && rooms.containsKey(line.charAt(i))) {
 						board[row][column] = new BoardCell(row, column, line.charAt(i), line.charAt(i+1));
+						i++;
+						column++;
+					}
+					else if (rooms.containsKey(line.charAt(i))){
+						board[row][column] = new BoardCell(row, column, line.charAt(i));
 						column++;
 					}
 					else {
-						board[row][column] = new BoardCell(row, column, line.charAt(i));
-						column++;
+						throw new BadConfigFormatException();
 					}
 				}
 			}
@@ -63,31 +67,40 @@ public class Board {
 		Scanner in = new Scanner(reader);
 		while (in.hasNextLine()) {
 			String line = in.nextLine();
-			
+			char initial = line.charAt(0);
+			String roomName = "";
+			boolean card = false;
+			int i;
+			for (i = 2; line.charAt(i) == ','; i++) {
+				roomName += line.charAt(i);
+			}
+			if (line.charAt(i+2) == 'C') {
+				card = true;
+			}
+			rooms.put(initial, roomName);
 		}
 	}
 
 	public void initialize() {
 		rooms = new HashMap<Character, String>();
+		board = new BoardCell[MAXBOARDSIZE][MAXBOARDSIZE];
+		boardConfigFile = "legend.txt";
+		roomConfigFile = "map.csv";
 	}
 
 	public Map<Character, String> getLegend() {
-		// TODO Auto-generated method stub
-		return null;
+		return rooms;
 	}
 
 	public int getNumRows() {
-		// TODO Auto-generated method stub
-		return 0;
+		return numRows;
 	}
 
 	public int getNumColumns() {
-		// TODO Auto-generated method stub
-		return 0;
+		return numColumns;
 	}
 
 	public BoardCell getCellAt(int i, int j) {
-		// TODO Auto-generated method stub
-		return null;
+		return board[i][j];
 	}
 }
