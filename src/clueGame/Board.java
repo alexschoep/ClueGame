@@ -130,4 +130,20 @@ public class Board {
 	public BoardCell getCellAt(int i, int j) {
 		return board[i][j];
 	}
+	
+	public void calcAdjacencies() {
+		return;
+	}
+	
+	public void calcTargets(int a, int b, int c) {
+		return;
+	}
+	
+	public Set<BoardCell> getAdjList(int a, int b) {
+		return null;
+	}
+	
+	public Set<BoardCell> getTargets() {
+		return null;
+	}
 }

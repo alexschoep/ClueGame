@@ -77,7 +77,7 @@ public class OurTests {
 		assertTrue(room.isDoorway());
 		assertEquals(DoorDirection.DOWN, room.getDoorDirection());
 		// Test that room pieces that aren't doors know it
-		room = board.getCellAt(17, 6);
+		room = board.getCellAt(15, 7);
 		assertFalse(room.isDoorway());	
 		// Test that walkways are not doors
 		BoardCell cell = board.getCellAt(0, 4);
