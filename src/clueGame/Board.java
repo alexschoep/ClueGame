@@ -177,8 +177,8 @@ public class Board {
 	}
 	
 	public boolean adjValid(BoardCell cell, BoardCell adjCell) {
-		if (cell.isDoorway()) {
-			switch (cell.getDoorDirection()) {
+		if (adjCell.isDoorway()) {
+			switch (adjCell.getDoorDirection()) {
 			case RIGHT:
 				return cell.getColumn() == adjCell.getColumn() + 1;
 			case LEFT:
@@ -190,8 +190,8 @@ public class Board {
 			case NONE:
 				break;
 			}
-		} else if (adjCell.isDoorway()) {
-			switch (adjCell.getDoorDirection()) {
+		} else if (cell.isDoorway()) {
+			switch (cell.getDoorDirection()) {
 			case RIGHT:
 				return cell.getColumn() == adjCell.getColumn() - 1;
 			case LEFT:
