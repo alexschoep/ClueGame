@@ -225,7 +225,7 @@ public class Board {
 		for (BoardCell adjCell : adjMatrix.get(cell)) {
 			if (!visited.contains(adjCell)) {
 				visited.add(adjCell);
-				if (steps == 1) {
+				if (steps == 1 || adjCell.isDoorway()) {
 					targets.add(adjCell);
 				}
 				else {

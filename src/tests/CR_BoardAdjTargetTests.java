@@ -69,6 +69,7 @@ public class CR_BoardAdjTargetTests {
 		assertTrue(testList.contains(board.getCellAt(10, 16)));
 		//TEST DOORWAY DOWN
 		testList = board.getAdjList(5, 15);
+		System.out.println(testList);
 		assertEquals(1, testList.size());
 		assertTrue(testList.contains(board.getCellAt(6, 15)));
 		//TEST DOORWAY UP
