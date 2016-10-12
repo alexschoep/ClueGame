@@ -23,6 +23,7 @@ public class Board {
 	private Board() {
 		rooms = new HashMap<Character, String>();
 		board = new BoardCell[MAXBOARDSIZE][MAXBOARDSIZE];
+		adjMatrix = new HashMap<BoardCell, Set<BoardCell>>(); 
 	}
 	
 	// this method returns the only Board
