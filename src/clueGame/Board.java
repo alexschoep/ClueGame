@@ -1,6 +1,9 @@
 package clueGame;
 
 import java.util.*;
+
+import experiment.BoardCell;
+
 import java.io.*;
 
 public class Board {
@@ -11,7 +14,7 @@ public class Board {
 	private BoardCell board[][];
 	private Map<Character, String> rooms;
 	private Map<BoardCell, Set<BoardCell>> adjMatrix;
-	private Set<BoardCell> targets;
+	//private Set<BoardCell> targets;
 	private String boardConfigFile;
 	private String roomConfigFile;
 	
@@ -113,6 +116,7 @@ public class Board {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		calcAdjacencies();
 	}
 
 	public Map<Character, String> getLegend() {
@@ -127,23 +131,106 @@ public class Board {
 		return numColumns;
 	}
 
-	public BoardCell getCellAt(int i, int j) {
-		return board[i][j];
+	public BoardCell getCellAt(int row, int column) {
+		return board[row][column];
 	}
 	
 	public void calcAdjacencies() {
-		return;
+		for (int i = 0; i < numRows; i++) {
+			for (int j = 0; j < numColumns; j++) {
+				BoardCell cell = board[i][j];
+				Set<BoardCell> adjCells = new HashSet<BoardCell>();
+				
+				BoardCell adjCell = board[cell.getRow() - 1][cell.getColumn()];
+				if (cell.getRow() - 1 >= 0 && adjValid(cell, adjCell)) {
+					adjCells.add(adjCell);
+				}
+				
+				adjCell = board[cell.getRow() + 1][cell.getColumn()];
+				if (cell.getRow() + 1 < numRows && adjValid(cell, adjCell)) {
+					adjCells.add(adjCell);
+				}
+				
+				adjCell = board[cell.getRow()][cell.getColumn() - 1];
+				if (cell.getColumn() - 1 >= 0 && adjValid(cell, adjCell)) {
+					adjCells.add(adjCell);
+				}
+				
+				adjCell = board[cell.getRow()][cell.getColumn() + 1];
+				if (cell.getColumn() + 1 < numColumns && adjValid(cell, adjCell)) {
+					adjCells.add(adjCell);
+				}
+				
+				adjMatrix.put(board[i][j], adjCells);
+			}
+		}
 	}
 	
-	public void calcTargets(int a, int b, int c) {
-		return;
+	public boolean adjValid(BoardCell cell, BoardCell adjCell) {
+		if (cell.isDoorway()) {
+			switch (cell.getDoorDirection()) {
+			case RIGHT:
+				return cell.getColumn() == adjCell.getColumn() + 1;
+			case LEFT:
+				return cell.getColumn() == adjCell.getColumn() - 1;
+			case UP:
+				return cell.getColumn() == adjCell.getColumn() + 1;
+			case DOWN:
+				return cell.getColumn() == adjCell.getColumn() - 1;
+			case NONE:
+				break;
+			}
+		} else if (adjCell.isDoorway()) {
+			switch (adjCell.getDoorDirection()) {
+			case RIGHT:
+				return cell.getColumn() == adjCell.getColumn() - 1;
+			case LEFT:
+				return cell.getColumn() == adjCell.getColumn() + 1;
+			case UP:
+				return cell.getColumn() == adjCell.getColumn() - 1;
+			case DOWN:
+				return cell.getColumn() == adjCell.getColumn() + 1;
+			case NONE:
+				break;
+			}
+		} else if (cell.getInitial() != 'W' || adjCell.getInitial() != 'W') {
+			return false;
+		}
+		return true;
 	}
 	
-	public Set<BoardCell> getAdjList(int a, int b) {
-		return null;
+	private Set visited = new HashSet<BoardCell>();
+	private Set targets = new HashSet<BoardCell>();
+
+	public void calcTargets(int row, int column, int steps) {
+		visited = new HashSet<BoardCell>();
+		targets = new HashSet<BoardCell>();
+		BoardCell cell = board[row][column];
+		visited.add(cell);
+		calcRecurseTargets(cell, steps);
+	}
+	
+	//recursively finds targets for calcTargets
+	private void calcRecurseTargets(BoardCell cell, int steps) {
+		for (BoardCell adjCell : adjMatrix.get(cell)) {
+			if (!visited.contains(adjCell)) {
+				visited.add(adjCell);
+				if (steps == 1) {
+					targets.add(adjCell);
+				}
+				else {
+					calcRecurseTargets(adjCell, steps - 1);
+				}
+				visited.remove(adjCell);	
+			}
+		}
+	}
+	
+	public Set<BoardCell> getAdjList(int row, int column) {
+		return adjMatrix.get(board[row][column]);
 	}
 	
 	public Set<BoardCell> getTargets() {
-		return null;
+		return targets;
 	}
 }
