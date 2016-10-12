@@ -1,0 +1,239 @@
+NOTE: Mixture of pair programming and individual work is shown here. Both partners feel equal work was done.
+
+commit 4254b11d0e32306b357937ad39a728c6fed0f4dc
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Tue Oct 11 23:57:45 2016 -0600
+
+    Added valid spots for 6step I overlooked
+
+commit b6bf79ff8b391fb8421f784876c6d7d0f23c8ca4
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Tue Oct 11 23:49:48 2016 -0600
+
+    Fixed our tests, reminensent of old bad gamemap labeling
+
+commit ab0d469721afa2832d5849261991727cd2514fb6
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Tue Oct 11 23:43:49 2016 -0600
+
+    Finally fixed adjList calculations. Passes known good tests
+
+commit 618f4ae3b8a7b6468918bf75a8a3ffd5ee31eb90
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Tue Oct 11 23:38:42 2016 -0600
+
+    Corrected door landing detection - can land on door even if less than roll
+
+commit 4113e214199aa8bee4f6f44090903dc5b26d2a8f
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Tue Oct 11 23:33:22 2016 -0600
+
+    fixed a test that was wrong
+
+commit 6b5698289a08918c0d0a899deaea9456cbe4b433
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Tue Oct 11 23:23:41 2016 -0600
+
+    Fixed adjValid() so correct adjLists are calculated
+
+commit fbdcebf157558e9f719de3815f831430a40ba973
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Tue Oct 11 23:17:46 2016 -0600
+
+    changed board class more to pass tests
+
+commit a0d277f12438d929a66537abbde65a1cfdd2e8ac
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Tue Oct 11 23:01:13 2016 -0600
+
+    Fixed some null pointer exceptions
+
+commit b1b21641b86afe48bb08cc033e7e11d2eaa0c7fd
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Tue Oct 11 22:54:28 2016 -0600
+
+    worked on board class more
+
+commit 6fa1bb730ce839a62787e2841da404ace3d79ae2
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Tue Oct 11 22:43:25 2016 -0600
+
+    added to board class
+
+commit 67d501477ae801913f50b2a18a1c59926ec94076
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Mon Oct 10 23:57:30 2016 -0600
+
+    Finished adj and target tests
+
+commit 43fdb6b713adbf75e8f2be62fa6dbf743d0f8d3e
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Mon Oct 10 23:24:41 2016 -0600
+
+    Fixed row counting in map excel file
+
+commit 516aaea0079b603b4e8c78cb9f4402608c68963d
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Mon Oct 10 23:20:30 2016 -0600
+
+    updated excel file
+
+commit 098f6f4a331cd240b835bbc495959413c12b75ef
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Mon Oct 10 23:15:18 2016 -0600
+
+    added more tsts
+
+commit 0ffdeb932f6d41ab1048e48a1d9de223243c3f1b
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Mon Oct 10 23:03:09 2016 -0600
+
+    added tests
+
+commit 3dd4859d61abf3e6ac7f929eee17ec011fc5cea4
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Thu Oct 6 23:24:45 2016 -0600
+
+    Finished getting code to pass tests and added copy of boardfiles
+
+commit 1569a39319e1fe4a4bf5e9d7848246b0339c98ee
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Thu Oct 6 22:31:55 2016 -0600
+
+    tried to get tests working
+
+commit 6906fb3d65980085928860c4f2e87c3f28ab6fe7
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Thu Oct 6 22:16:28 2016 -0600
+
+    started exception handling
+
+commit f7427da11be49869f8f5b9302d683b4fb08f2c55
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Thu Oct 6 21:47:47 2016 -0600
+
+    made changed to BoardCell
+
+commit 7243aa8c90d32c9677edeb6565dcb90db2eab356
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Thu Oct 6 21:46:13 2016 -0600
+
+    added more to board class
+
+commit 8f8e60e951bc2468d1aa9ec3aa2dbbc2711ca4d7
+Merge: fbea823 89a51fa
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Thu Oct 6 12:07:41 2016 -0600
+
+    gerge branch 'master' of https://github.com/alexschoep/ClueGame
+
+commit fbea8235f39cd2efd693a8f3d2bc022b11dd0966
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Thu Oct 6 12:07:01 2016 -0600
+
+    added door direction interpreter
+
+commit 89a51faced1852de7b7c1a7ca4502733f80a0ad7
+Author: William Brown <wilbrown@adit.mines.edu>
+Date:   Thu Oct 6 11:44:11 2016 -0600
+
+    Flushed out BadConfigException
+
+commit 9d374189c8a352213ff7cf2bd8c7764697e09866
+Author: William Brown <wilbrown@adit.mines.edu>
+Date:   Thu Oct 6 11:40:13 2016 -0600
+
+    Added CR_ExceptionsTests
+
+commit b5b5f97b792a0d9e9c41d9213e2d5e0fd257b51e
+Author: William Brown <wilbrown@adit.mines.edu>
+Date:   Thu Oct 6 11:34:33 2016 -0600
+
+    Added instance vars
+
+commit d0b95e79d3c64285de3a778ba5212b9a7a429b33
+Author: will brown <will brown>
+Date:   Tue Oct 4 14:32:00 2016 -0600
+
+    Finalized JUnit tests and text descriptions.
+
+commit ec0b3765e10fd29f1ea15ea19c51d0ff058cf6a1
+Author: will brown <will brown>
+Date:   Tue Oct 4 13:52:10 2016 -0600
+
+    Added our map and legend file
+
+commit 0a97239e255a575429a7f094042d69ac5a992043
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Tue Oct 4 13:44:44 2016 -0600
+
+    added data files from eecs.mines.edu
+
+commit bc7e967c3d98ef225d047fa15024fd770169c5ea
+Merge: a362da3 1b8b0c5
+Author: will brown <will brown>
+Date:   Tue Oct 4 13:39:01 2016 -0600
+
+    Merge branch 'master' of https://github.com/alexschoep/ClueGame
+
+commit a362da3147190c804a468d224ba4037cc86ff3f5
+Author: will brown <will brown>
+Date:   Tue Oct 4 13:38:36 2016 -0600
+
+    Added empty functions and constructors
+
+commit 1b8b0c5e1654d7f7b3657f7ab1351e4662313f6a
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Tue Oct 4 13:37:29 2016 -0600
+
+    completed DoorDirection enumerated type
+
+commit a5d92c38fcee7eea446786387c143c077c1a8416
+Merge: 8d63fa3 3ea0bb6
+Author: will brown <will brown>
+Date:   Tue Oct 4 13:31:13 2016 -0600
+
+    Merging repos
+
+commit 8d63fa3b9eeb43f0183e037fde82f4242193dfef
+Author: will brown <will brown>
+Date:   Tue Oct 4 13:29:38 2016 -0600
+
+    Testing git, unsure of how changes appear.
+
+commit 3ea0bb6c8d67f1e7556eb1c25724d9187d856279
+Merge: c591e61 f1a24c6
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Tue Oct 4 13:26:16 2016 -0600
+
+    Merge branch 'master' of https://github.com/alexschoep/ClueGame
+
+commit c591e61554cb217e7c2fa62cf3ff179205ed36cb
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Tue Oct 4 13:26:02 2016 -0600
+
+    edited class skeleton for Board
+
+commit f1a24c6930c7af1f5cad9fca274abbbfa1ea9281
+Author: will brown <will brown>
+Date:   Tue Oct 4 13:23:41 2016 -0600
+
+    Fixed bad package
+
+commit 6c70281b1aed3450e5f486ffbd443e0241e41bb9
+Author: Alexander Schoep <aschoep@adit.mines.edu>
+Date:   Tue Oct 4 13:12:37 2016 -0600
+
+    added a few things for ClueBoard 1
+
+commit 467a3abafa6bd9f9c23b47be38eed10ed5668a51
+Author: William Brown <wilbrown@adit.mines.edu>
+Date:   Tue Oct 4 11:42:25 2016 -0600
+
+    Initial commit
+
+commit fc00d8fa54136c97ebf55d16682f27599b74180e
+Author: alexschoep <aschoep@mines.edu>
+Date:   Tue Oct 4 11:26:23 2016 -0600
+
+    Initial commit
