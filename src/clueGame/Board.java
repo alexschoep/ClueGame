@@ -184,9 +184,9 @@ public class Board {
 			case LEFT:
 				return cell.getColumn() == adjCell.getColumn() - 1;
 			case UP:
-				return cell.getColumn() == adjCell.getColumn() + 1;
+				return cell.getRow() == adjCell.getRow() - 1;
 			case DOWN:
-				return cell.getColumn() == adjCell.getColumn() - 1;
+				return cell.getRow() == adjCell.getRow() + 1;
 			case NONE:
 				break;
 			}
@@ -197,9 +197,9 @@ public class Board {
 			case LEFT:
 				return cell.getColumn() == adjCell.getColumn() + 1;
 			case UP:
-				return cell.getColumn() == adjCell.getColumn() - 1;
+				return cell.getRow() == adjCell.getRow() + 1;
 			case DOWN:
-				return cell.getColumn() == adjCell.getColumn() + 1;
+				return cell.getRow() == adjCell.getRow() - 1;
 			case NONE:
 				break;
 			}
