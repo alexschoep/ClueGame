@@ -2,8 +2,6 @@ package clueGame;
 
 import java.util.*;
 
-import experiment.BoardCell;
-
 import java.io.*;
 
 public class Board {
@@ -103,6 +101,7 @@ public class Board {
 			}
 			rooms.put(initial, roomName);
 		}
+		in.close();
 	}
 
 	public void initialize() {
@@ -141,24 +140,34 @@ public class Board {
 				BoardCell cell = board[i][j];
 				Set<BoardCell> adjCells = new HashSet<BoardCell>();
 				
-				BoardCell adjCell = board[cell.getRow() - 1][cell.getColumn()];
-				if (cell.getRow() - 1 >= 0 && adjValid(cell, adjCell)) {
-					adjCells.add(adjCell);
+				BoardCell adjCell;
+				
+				if (cell.getRow() - 1 >= 0) {
+					adjCell = board[cell.getRow() - 1][cell.getColumn()];
+					if (adjValid(cell, adjCell)) {
+						adjCells.add(adjCell);
+					}
 				}
 				
-				adjCell = board[cell.getRow() + 1][cell.getColumn()];
-				if (cell.getRow() + 1 < numRows && adjValid(cell, adjCell)) {
-					adjCells.add(adjCell);
+				if (cell.getRow() + 1 < numRows) {
+					adjCell = board[cell.getRow() + 1][cell.getColumn()];
+					if (adjValid(cell, adjCell)) {
+						adjCells.add(adjCell);
+					}
 				}
 				
-				adjCell = board[cell.getRow()][cell.getColumn() - 1];
-				if (cell.getColumn() - 1 >= 0 && adjValid(cell, adjCell)) {
-					adjCells.add(adjCell);
+				if (cell.getColumn() - 1 >= 0) {
+					adjCell = board[cell.getRow()][cell.getColumn() - 1];
+					if (adjValid(cell, adjCell)) {
+						adjCells.add(adjCell);
+					}
 				}
 				
-				adjCell = board[cell.getRow()][cell.getColumn() + 1];
-				if (cell.getColumn() + 1 < numColumns && adjValid(cell, adjCell)) {
-					adjCells.add(adjCell);
+				if (cell.getColumn() + 1 < numColumns) {
+					adjCell = board[cell.getRow()][cell.getColumn() + 1];
+					if (adjValid(cell, adjCell)) {
+						adjCells.add(adjCell);
+					}
 				}
 				
 				adjMatrix.put(board[i][j], adjCells);
