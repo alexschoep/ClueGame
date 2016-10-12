@@ -92,9 +92,10 @@ public class OurTests2 {
 		assertEquals(4, testList.size());
 		// Test beside a door direction DOWN
 		testList = board.getAdjList(18, 11);
-		assertTrue(testList.contains(board.getCellAt(18, 10)));
-		assertTrue(testList.contains(board.getCellAt(18, 12)));
-		assertTrue(testList.contains(board.getCellAt(17, 11)));
+		System.out.println(board.getAdjList(20,  11));
+		assertTrue(testList.contains(board.getCellAt(20, 10)));
+		assertTrue(testList.contains(board.getCellAt(20, 12)));
+		assertTrue(testList.contains(board.getCellAt(21, 11)));
 		assertTrue(testList.contains(board.getCellAt(19, 11)));
 		assertEquals(3, testList.size());
 		// Test beside a door direction LEFT
