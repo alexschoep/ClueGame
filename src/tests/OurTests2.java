@@ -124,6 +124,13 @@ public class OurTests2 {
 		assertTrue(testList.contains(board.getCellAt(21, 8)));
 		assertTrue(testList.contains(board.getCellAt(20, 7)));
 		assertEquals(3, testList.size());
+		
+		// Test on top edge of board, three walkway pieces
+		testList = board.getAdjList(0, 6);
+		assertTrue(testList.contains(board.getCellAt(0, 5)));
+		assertTrue(testList.contains(board.getCellAt(0, 7)));
+		assertTrue(testList.contains(board.getCellAt(1, 6)));
+		assertEquals(3, testList.size());
 
 		// Test between two rooms, walkways right and down
 		testList = board.getAdjList(3, 9);
